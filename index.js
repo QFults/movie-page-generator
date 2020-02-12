@@ -12,27 +12,15 @@ const buildMoviePage = movies => {
   <title>Movie Page</title>
 </head>
 <body>
-  <div>
-    <h1>Title: ${movies[0].Title}</h1>
-    <img src="${movies[0].Poster}" alt="${movies[0].Title}">
-    <h3>Director: ${movies[0].Director}</h3>
-    <h4>Year: ${movies[0].Year}</h4>
-    <p>Plot: ${movies[0].Plot}</p>
+  ${movies.map(movie => `
+    <div>
+    <h1>Title: ${movie.Title}</h1>
+    <img src="${movie.Poster}" alt="${movie.Title}">
+    <h3>Director: ${movie.Director}</h3>
+    <h4>Year: ${movie.Year}</h4>
+    <p>Plot: ${movie.Plot}</p>
   </div>
-  <div>
-    <h1>Title: ${movies[1].Title}</h1>
-    <img src="${movies[1].Poster}" alt="${movies[1].Title}">
-    <h3>Director: ${movies[1].Director}</h3>
-    <h4>Year: ${movies[1].Year}</h4>
-    <p>Plot: ${movies[1].Plot}</p>
-  </div>
-  <div>
-    <h1>Title: ${movies[2].Title}</h1>
-    <img src="${movies[2].Poster}" alt="${movies[2].Title}">
-    <h3>Director: ${movies[2].Director}</h3>
-    <h4>Year: ${movies[2].Year}</h4>
-    <p>Plot: ${movies[2].Plot}</p>
-  </div>
+  `).join('')}
 </body>
 </html>
   `
